@@ -1,0 +1,28 @@
+var reverseVowels = function(s) {
+    let arr = s.split("");
+
+    let left = 0;
+    let right = arr.length - 1;
+
+    function isVowel(char) {
+        return "aeiouAEIOU".includes(char);
+    }
+
+    while (left < right) {
+
+        if (!isVowel(arr[left])) {
+            left++;
+        }
+        else if (!isVowel(arr[right])) {
+            right--;
+        }
+        else {
+            [arr[left], arr[right]] = [arr[right], arr[left]];
+
+            left++;
+            right--;
+        }
+    }
+
+    return arr.join("");
+};
