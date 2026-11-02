@@ -1,0 +1,11 @@
+var moveZeroes = function(nums) {
+    let nonZero = nums.filter(num => num !== 0);
+
+    while (nonZero.length < nums.length) {
+        nonZero.push(0);
+    }
+
+    for (let i = 0; i < nums.length; i++) {
+        nums[i] = nonZero[i];
+    }
+};
